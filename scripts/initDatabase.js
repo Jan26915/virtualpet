@@ -18,10 +18,11 @@ const { open } = require('sqlite');
       updatedAt TEXT
     );
     CREATE TABLE IF NOT EXISTS adopt (
-      id INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
-      userId INTEGER NOT NULL,
-      petname TEXT NOT NULL,
-      FOREIGN KEY("userId) REFERENCES "users"("id") ON DELETE SET NULL
+	    "id"	INTEGER NOT NULL UNIQUE,
+	    "userId"	INTEGER NOT NULL,
+	    "petname"	TEXT NOT NULL,
+	    PRIMARY KEY("id" AUTOINCREMENT),
+	    FOREIGN KEY("userId") REFERENCES "users"("id") ON DELETE SET NULL
     );
   `);
   console.log('Database initialized at', dbFile);
