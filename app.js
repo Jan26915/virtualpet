@@ -32,7 +32,7 @@ app.use('/api', require('./routes/api/users'));
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-app.use('/uploads', express.static(path.join(__dirname, 'data', 'uploads')));
+app.use('/adopt', express.static(path.join(__dirname, 'data', 'adopt')));
 
 app.get('/adopt', (req, res) => {
   res.render('adopt', { user: req.session.user || null });
